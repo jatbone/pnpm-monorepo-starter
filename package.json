@@ -10,7 +10,8 @@
     "db:dev": "nx run db:dev",
     "db:build": "nx run db:build",
     "build": "nx run-many --target=build --all",
-    "lint": "nx run-many --target=lint --all"
+    "lint": "nx run-many --target=lint --all",
+    "test": "nx run-many --target=test --all"
   },
   "keywords": [],
   "author": "",
