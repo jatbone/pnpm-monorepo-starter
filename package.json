@@ -9,6 +9,8 @@
     "db:push": "nx run db:push",
     "db:dev": "nx run db:dev",
     "db:build": "nx run db:build",
+    "api:dev": "nx run api:dev",
+    "api:build": "nx run api:build",
     "build": "nx run-many --target=build --all",
     "lint": "nx run-many --target=lint --all",
     "test": "nx run-many --target=test --all"
