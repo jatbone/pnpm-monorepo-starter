@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714247466524,
+      "tag": "0000_blushing_groot",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714328777825,
+      "tag": "0001_clean_gressill",
+      "breakpoints": true
+    }
+  ]
+}

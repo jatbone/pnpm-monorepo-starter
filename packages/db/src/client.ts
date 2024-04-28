@@ -1,22 +1,12 @@
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
 
-export const getDb = ({
-  host,
-  port,
-  user,
-  password,
-  database,
-}: {
-  host: string
-  port: number
-  user: string
-  password: string
-  database: string
-}) => {
-  const connection = postgres(
-    `postgres://${user}:${password}@${host}:${port}/${database}`,
-  )
+const conn = postgres({
+  user: process.env.POSTGRES_USER!,
+  password: process.env.POSTGRES_PASSWORD!,
+  db: process.env.POSTGRES_DB!,
+  host: process.env.DB_HOST!,
+  port: Number(process.env.DB_PORT!),
+})
 
-  return drizzle(connection)
-}
+export const db = drizzle(conn)
