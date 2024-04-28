@@ -1,0 +1,29 @@
+{
+  "name": "trpc-router",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev:": "tsc -w",
+    "lint": "npm run lint:eslint:fix && npm run lint:prettier:fix",
+    "test": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint --ext .ts,.js ./src",
+    "lint:eslint:fix": "eslint --ext .ts,.js ./src --fix",
+    "lint:prettier": "prettier --check \"src/**/*.ts\"",
+    "lint:prettier:fix": "prettier --write \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.30.9",
+    "zod": "^3.22.4",
+    "@trpc/server": "^11.0.0-rc.354",
+    "db": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  }
+}

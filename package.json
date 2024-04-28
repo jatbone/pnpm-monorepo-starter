@@ -11,6 +11,9 @@
     "db:build": "nx run db:build",
     "api:dev": "nx run api:dev",
     "api:build": "nx run api:build",
+    "trpc:dev": "nx run trpc-router:dev",
+    "trpc:build": "nx run trpc-router:build",
+    "be:dev": "nx run-many --parallel --target=dev -p api db trpc-router",
     "build": "nx run-many --target=build --all",
     "lint": "nx run-many --target=lint --all",
     "test": "nx run-many --target=test --all"
