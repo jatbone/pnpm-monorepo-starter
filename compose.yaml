@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  postgres-test-db:
+    container_name: postgres-test-db
+    image: postgres-test-db
+    build:
+      context: .
+      dockerfile: ./dockerfiles/db.Dockerfile
+    env_file:
+      - './packages/db/.env'
+    ports:
+      - '5433:5432'
