@@ -19,14 +19,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.26.2",
+    "@fastify/cors": "^9.0.1",
+    "@trpc/server": "^11.0.0-rc.354",
     "dotenv": "^16.4.5",
-    "db": "workspace:*"
+    "fastify": "^4.26.2",
+    "trpc-router": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "20.12.7",
-    "rimraf": "^5.0.5",
     "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
     "tsx": "^4.7.3",
     "typescript": "^5.4.5"
   }

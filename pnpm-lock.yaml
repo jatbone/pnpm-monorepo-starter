@@ -45,15 +45,21 @@ importers:
 
   apps/api:
     dependencies:
-      db:
-        specifier: workspace:*
-        version: link:../../packages/db
+      '@fastify/cors':
+        specifier: ^9.0.1
+        version: 9.0.1
+      '@trpc/server':
+        specifier: ^11.0.0-rc.354
+        version: 11.0.0-rc.354
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
       fastify:
         specifier: ^4.26.2
         version: 4.26.2
+      trpc-router:
+        specifier: workspace:*
+        version: link:../../packages/trpc-router
     devDependencies:
       '@types/node':
         specifier: 20.12.7
@@ -98,6 +104,25 @@ importers:
       typescript:
         specifier: ^4.3.5
         version: 4.9.5
+
+  packages/trpc-router:
+    dependencies:
+      '@trpc/server':
+        specifier: ^11.0.0-rc.354
+        version: 11.0.0-rc.354
+      db:
+        specifier: workspace:*
+        version: link:../db
+      drizzle-orm:
+        specifier: ^0.30.9
+        version: 0.30.9(pg@8.11.5)(postgres@3.4.4)
+      zod:
+        specifier: ^3.22.4
+        version: 3.23.4
+    devDependencies:
+      typescript:
+        specifier: ^5.4.2
+        version: 5.4.5
 
 packages:
 
@@ -463,6 +488,9 @@ packages:
   '@fastify/ajv-compiler@3.5.0':
     resolution: {integrity: sha512-ebbEtlI7dxXF5ziNdr05mOY8NnDiPB1XvAlLHctRt/Rc+C3LCOVW5imUVX+mhvUhnNzmPBHewUkOFgGlCxgdAA==}
 
+  '@fastify/cors@9.0.1':
+    resolution: {integrity: sha512-YY9Ho3ovI+QHIL2hW+9X4XqQjXLjJqsU+sMV/xFsxZkE8p3GNnYVFpoOxF7SsP5ZL76gwvbo3V9L+FIekBGU4Q==}
+
   '@fastify/error@3.4.1':
     resolution: {integrity: sha512-wWSvph+29GR783IhmvdwWnN4bUxTD01Vm5Xad4i7i1VuAOItLvbPAb69sb0IQ2N57yprvhNIwAP5B6xfKTmjmQ==}
 
@@ -614,6 +642,9 @@ packages:
     peerDependenciesMeta:
       '@vue/compiler-sfc':
         optional: true
+
+  '@trpc/server@11.0.0-rc.354':
+    resolution: {integrity: sha512-45QgalVFW3+JnFqrfTWKRuqkDTOtl9tnPps6DG6kf2lwULwSW3v55+YpMWc6ZSrkZdBXGMON0bBR/Ab4hU0zbA==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -1298,6 +1329,9 @@ packages:
   fast-uri@2.3.0:
     resolution: {integrity: sha512-eel5UKGn369gGEWOqBShmFJWfq/xSJvsgDzgLYC845GneayWvXBf0lJCBn5qTABfewy1ZDPoaR5OZCP+kssfuw==}
 
+  fastify-plugin@4.5.1:
+    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
+
   fastify@4.26.2:
     resolution: {integrity: sha512-90pjTuPGrfVKtdpLeLzND5nyC4woXZN5VadiNQCicj/iJU4viNHKhsAnb7jmv1vu2IzkLXyBiCzdWuzeXgQ5Ug==}
 
@@ -1796,6 +1830,9 @@ packages:
     resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  mnemonist@0.39.6:
+    resolution: {integrity: sha512-A/0v5Z59y63US00cRSLiloEIw3t5G+MiKz4BhX21FI+YBJXBOGW0ohFxTxO08dsOYlzxo87T7vGfZKYp2bcAWA==}
+
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
@@ -1858,6 +1895,9 @@ packages:
   object.assign@4.1.5:
     resolution: {integrity: sha512-byy+U7gp+FVwmyzKPYhW2h5l3crpmGsxl7X2s8y43IgxvG4g3QZ6CffDtsNQy1WsmZpQbO+ybo0AlW7TY6DcBQ==}
     engines: {node: '>= 0.4'}
+
+  obliterator@2.0.4:
+    resolution: {integrity: sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==}
 
   on-exit-leak-free@2.1.2:
     resolution: {integrity: sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA==}
@@ -2742,6 +2782,11 @@ snapshots:
       ajv-formats: 2.1.1(ajv@8.12.0)
       fast-uri: 2.3.0
 
+  '@fastify/cors@9.0.1':
+    dependencies:
+      fastify-plugin: 4.5.1
+      mnemonist: 0.39.6
+
   '@fastify/error@3.4.1': {}
 
   '@fastify/fast-json-stringify-compiler@4.3.0':
@@ -2870,6 +2915,8 @@ snapshots:
       prettier: 3.2.5
     transitivePeerDependencies:
       - supports-color
+
+  '@trpc/server@11.0.0-rc.354': {}
 
   '@types/json-schema@7.0.15': {}
 
@@ -3654,6 +3701,8 @@ snapshots:
 
   fast-uri@2.3.0: {}
 
+  fastify-plugin@4.5.1: {}
+
   fastify@4.26.2:
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
@@ -4152,6 +4201,10 @@ snapshots:
 
   minipass@7.0.4: {}
 
+  mnemonist@0.39.6:
+    dependencies:
+      obliterator: 2.0.4
+
   ms@2.1.2: {}
 
   natural-compare@1.4.0: {}
@@ -4264,6 +4317,8 @@ snapshots:
       define-properties: 1.2.1
       has-symbols: 1.0.3
       object-keys: 1.1.1
+
+  obliterator@2.0.4: {}
 
   on-exit-leak-free@2.1.2: {}
 
