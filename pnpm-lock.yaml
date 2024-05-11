@@ -82,6 +82,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.32.0
         version: 5.35.5(react@18.3.1)
+      '@trpc/client':
+        specifier: ^11.0.0-rc.354
+        version: 11.0.0-rc.366(@trpc/server@11.0.0-rc.354)
       msw:
         specifier: ^2.2.14
         version: 2.3.0(typescript@5.4.5)
@@ -94,6 +97,9 @@ importers:
       react-router-dom:
         specifier: ^6.23.0
         version: 6.23.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      trpc-router:
+        specifier: workspace:*
+        version: link:../../packages/trpc-router
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.4.2
@@ -1112,6 +1118,11 @@ packages:
     peerDependenciesMeta:
       '@vue/compiler-sfc':
         optional: true
+
+  '@trpc/client@11.0.0-rc.366':
+    resolution: {integrity: sha512-bIbcF/UhCifU5i9hbbaMlmOS2NgnRq5W0pJH2SJhrp6jyIIaCF+uNAIZtkfO0GriBb0agBmGIXqvGLFEexiTKA==}
+    peerDependencies:
+      '@trpc/server': 11.0.0-rc.366+237dbb3f9
 
   '@trpc/server@11.0.0-rc.354':
     resolution: {integrity: sha512-45QgalVFW3+JnFqrfTWKRuqkDTOtl9tnPps6DG6kf2lwULwSW3v55+YpMWc6ZSrkZdBXGMON0bBR/Ab4hU0zbA==}
@@ -4440,6 +4451,10 @@ snapshots:
       prettier: 3.2.5
     transitivePeerDependencies:
       - supports-color
+
+  '@trpc/client@11.0.0-rc.366(@trpc/server@11.0.0-rc.354)':
+    dependencies:
+      '@trpc/server': 11.0.0-rc.354
 
   '@trpc/server@11.0.0-rc.354': {}
 

@@ -20,7 +20,7 @@ export const appRouter = router({
       .from(users)
       .where(eq(users.id, Number(input)))
 
-    return found
+    return found?.[0]
   }),
   createUser: publicProcedure.input(insertUserSchema).mutation(async (opts) => {
     console.log('ctx', opts.ctx)
@@ -53,6 +53,7 @@ export const appRouter = router({
     const all = await db
       .select()
       .from(posts)
+      .innerJoin(users, eq(posts.authorId, users.id))
       .where(eq(posts.authorId, Number(input)))
 
     return all
