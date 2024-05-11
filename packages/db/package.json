@@ -8,9 +8,9 @@
     "dev": "tsc -w",
     "build": "tsc",
     "studio": "drizzle-kit studio",
-    "generate": "drizzle-kit generate:pg",
-    "pull": "drizzle-kit introspect:pg",
-    "push": "drizzle-kit push:pg",
+    "generate": "drizzle-kit generate",
+    "pull": "drizzle-kit introspect",
+    "push": "drizzle-kit push",
     "lint": "npm run lint:eslint:fix && npm run lint:prettier:fix",
     "test": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .ts,.js ./src",
@@ -22,14 +22,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "drizzle-kit": "^0.20.17",
+    "drizzle-kit": "^0.21.1",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "drizzle-zod": "^0.5.1",
     "zod": "^3.23.4",
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.30.9",
+    "drizzle-orm": "^0.30.10",
     "pg": "^8.11.5",
     "postgres": "^3.4.4"
   }

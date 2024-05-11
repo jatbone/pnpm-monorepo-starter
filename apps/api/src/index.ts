@@ -5,7 +5,7 @@ import {
 } from '@trpc/server/adapters/fastify'
 import * as dotenv from 'dotenv'
 import Fastify from 'fastify'
-import { appRouter, type AppRouter } from 'trpc-router'
+import { appRouter, type AppRouter, createFastifyContext } from 'trpc-router'
 
 import helloRoutes from './route/hello/index.js'
 
@@ -26,6 +26,7 @@ fastify.register(cors)
 fastify.register(fastifyTRPCPlugin, {
   prefix: '/trpc',
   trpcOptions: {
+    createContext: createFastifyContext,
     router: appRouter,
     onError({ path, error }) {
       console.error(`Error in tRPC handler on path '${path}':`, error)
